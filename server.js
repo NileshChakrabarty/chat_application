@@ -39,9 +39,11 @@ app.post('/join', async (req, res) => {
     await channel.create();
     await channel.addMembers([username, 'admin']);
 
-    res
-      .status(200)
-      .json({ user: { username }, token, api_key: process.env.STREAM_API_KEY });
+    res.status(200).json({
+      user: { id: username, username }, // Include both id and username
+      token,
+      api_key: process.env.STREAM_API_KEY
+    });    
   } catch (err) {
     console.error(err);
     res.status(500);
