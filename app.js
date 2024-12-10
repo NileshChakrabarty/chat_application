@@ -7,7 +7,7 @@ const util = require('util');
 const blessed = require('neo-blessed');
 
 function fetchToken(username) {
-  return axios.post('http://localhost:5500/join', {
+  return axios.post('https://chat-applicationhtrhgfh.onrender.com/join', {
     username,
   });
 }
